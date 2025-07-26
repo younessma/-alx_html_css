@@ -1,0 +1,44 @@
+/* ===== Main Layout Container ===== */
+.container {
+  display: flex;          /* Enable flexbox layout */
+  flex-direction: row;    /* Horizontal alignment (default) */
+  flex-wrap: wrap;        /* Allow items to wrap if needed */
+  gap: 20px;              /* Consistent spacing between items */
+  align-items: stretch;   /* Items stretch to same height */
+}
+
+/* ===== Vertical Sub-Container (for "vector" elements) ===== */
+.vertical-container {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  gap: 15px;             /* Vertical spacing */
+  flex: 1;               /* Take available space */
+  min-width: 200px;      /* Prevent too narrow on small screens */
+}
+
+/* ===== Individual Items ===== */
+.item {
+  flex: 1;               /* Distribute space equally */
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background: #f9f9f9;
+}
+
+/* ===== Text Handling ===== */
+.text-content {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;         /* Better word breaking */
+  line-height: 1.5;      /* Improved readability */
+}
+
+/* ===== Responsive Behavior ===== */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack vertically on small screens */
+  }
+  .vertical-container {
+    min-width: 100%;     /* Full width on mobile */
+  }
+}
